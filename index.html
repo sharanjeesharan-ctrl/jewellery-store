@@ -7,6 +7,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script>(function(d){d.classList.add("js");try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&sessionStorage.getItem("aurum-hero-intro")!=="1"){d.classList.add("intro");sessionStorage.setItem("aurum-hero-intro","1")}}catch(e){}setTimeout(function(){if(!d.classList.contains("hero-ready")){d.classList.add("hero-static");d.classList.remove("intro")}},3500)})(document.documentElement)</script>
 <title>Aurum Gallery | Heirloom Gold Jewellery</title>
 <meta name="description" content="Heirloom-inspired Indian gold jewellery — temple necklaces, ruby-set filigree and bridal statement pieces. Watch the collection in motion and enquire on WhatsApp.">
 <meta property="og:title" content="Aurum Gallery | Heirloom Gold Jewellery">
@@ -352,6 +353,37 @@ body.menu-open header{background:transparent;border-color:transparent;backdrop-f
 }
 @media (prefers-reduced-motion:reduce){.cscroll-card{transform:none}}
 
+/* ---- Hero upgrade: curtain, depth words, liquid gold, layered parallax ---- */
+.hero-media,.hero-fx,.hero-content{will-change:transform}
+.hero-media{transform:scale(1.06)}
+.hero-shade{position:absolute;inset:0;z-index:1;background:var(--ink);opacity:0;pointer-events:none}
+.hero .wrap{position:relative;z-index:2}
+.js .dpw .w,.js .dpl{opacity:0}
+.dpw .w{display:inline-block;white-space:pre}
+.dpw-go .dpw .w{animation:dpw .7s cubic-bezier(.22,1,.36,1) both}
+.dpw-go .dpl{animation:dpl .9s cubic-bezier(.22,1,.36,1) both}
+@keyframes dpw{from{opacity:0;filter:blur(3px);transform:translateY(18px) scale(.92)}to{opacity:1;filter:none;transform:none}}
+@keyframes dpl{from{opacity:0;filter:blur(4px);transform:translateY(22px)}to{opacity:1;filter:none;transform:none}}
+.liquid-gold.lg-on{background-image:linear-gradient(100deg,#7a5410 0%,#f6dd8f 16%,#b3832a 32%,#fff6d0 46%,#8a5f16 62%,#edc862 78%,#6a460b 100%);background-size:300% 100%;background-position:50% 50%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 2px 14px rgba(201,166,107,.28))}
+.liquid-gold.lg-on .w{display:inline;animation:none!important;opacity:1!important;filter:none;transform:none}
+.hero-curtain{display:none;position:absolute;inset:0;z-index:6;pointer-events:none}
+.intro .hero-curtain{display:block}
+.intro-running .dstage{opacity:0!important;transition:opacity .6s}
+.hc-l,.hc-r{position:absolute;top:0;bottom:0;width:50.5%;background:linear-gradient(90deg,#0c0807,#1b1310);transition:transform 1.2s cubic-bezier(.77,0,.18,1)}
+.hc-l{left:0}.hc-r{right:0;background:linear-gradient(270deg,#0c0807,#1b1310)}
+.hc-seam{position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:linear-gradient(180deg,transparent,#f3e6c6 30%,#c9a66b 50%,#f3e6c6 70%,transparent);box-shadow:0 0 30px 6px rgba(231,209,163,.55);transform:scaleY(0);transition:transform .5s cubic-bezier(.22,1,.36,1),opacity .5s}
+.hc-mark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font:500 clamp(34px,6vw,64px)/1 var(--serif);letter-spacing:.2em;color:var(--gold2);text-align:center;opacity:0;transition:opacity .4s,letter-spacing 1s}
+.hc-mark small{display:block;font:600 10px var(--sans);letter-spacing:.5em;color:var(--gold);margin-top:10px}
+.hero-curtain.hc-play .hc-seam{transform:scaleY(1)}
+.hero-curtain.hc-play .hc-mark{opacity:1;letter-spacing:.28em}
+.hero-curtain.hc-open .hc-l{transform:translateX(-101%)}
+.hero-curtain.hc-open .hc-r{transform:translateX(101%)}
+.hero-curtain.hc-open .hc-seam,.hero-curtain.hc-open .hc-mark{opacity:0}
+.hero-static .dpw .w,.hero-static .dpl{opacity:1!important;animation:none!important}
+.dpw-done .dpw .w,.dpw-done .dpl{opacity:1!important;animation:none!important;filter:none!important;transform:none!important}
+.hero-static .hero-media{transform:none}
+@media (prefers-reduced-motion:reduce){.js .dpw .w,.js .dpl{opacity:1}.hero-curtain{display:none!important}}
+
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
 .reveal.visible{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.marquee-track{animation:none}html{scroll-behavior:auto}}
@@ -494,20 +526,22 @@ body.menu-open header{background:transparent;border-color:transparent;backdrop-f
   </div>
   <div class="wrap">
    <div class="hero-content">
-    <div class="eyebrow">The art of adornment · Heirloom gold</div>
-    <h1>Jewels that<br><em>hold a story.</em></h1>
-    <p>Hand-finished filigree, ruby accents and the warm glow of gold. Discover statement necklaces made for weddings, festivals and the moments your family will remember for generations.</p>
-    <div class="actions">
+    <div class="eyebrow dpl">The art of adornment · Heirloom gold</div>
+    <h1 class="dpw" aria-label="Jewels that hold a story."><span aria-hidden="true"><span class="w">Jewels</span> <span class="w">that</span><br><em class="liquid-gold"><span class="w">hold</span> <span class="w">a</span> <span class="w">story.</span></em></span></h1>
+    <p class="dpl">Hand-finished filigree, ruby accents and the warm glow of gold. Discover statement necklaces made for weddings, festivals and the moments your family will remember for generations.</p>
+    <div class="actions dpl">
      <a class="btn" href="#films"><svg><use href="#i-play"/></svg>Watch the Collection</a>
      <a class="btn outline" href="#enquire">Book a Private Viewing</a>
     </div>
-    <div class="hero-meta">
+    <div class="hero-meta dpl">
      <div><strong>Filigree</strong>Hand-finished detail</div>
      <div><strong>Ruby-set</strong>Gemstone accents</div>
      <div><strong>1:1</strong>Personal styling</div>
     </div>
    </div>
   </div>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="hero-curtain" aria-hidden="true"><div class="hc-l"></div><div class="hc-r"></div><div class="hc-seam"></div><div class="hc-mark">AURUM<small>GALLERY</small></div></div>
   <div class="scroll-cue">Scroll<span></span></div>
  </section>
 
@@ -805,5 +839,6 @@ document.getElementById('send-email').addEventListener('click',()=>{if(!check())
 <script src="assets/js/hero-fx.js" defer></script>
 <script src="assets/js/dual-stage.js" defer></script>
 <script src="assets/js/three-d.js" defer></script>
+<script src="assets/js/hero-pro.js" defer></script>
 </body>
 </html>
