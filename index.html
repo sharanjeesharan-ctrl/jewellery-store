@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#120d0b">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Aurum Gallery | Heirloom Gold Jewellery</title>
+<meta name="description" content="Heirloom-inspired Indian gold jewellery — temple necklaces, ruby-set filigree and bridal statement pieces. Watch the collection in motion and enquire on WhatsApp.">
+<meta property="og:title" content="Aurum Gallery | Heirloom Gold Jewellery">
+<meta property="og:description" content="Watch the collection in motion. Filigree gold, ruby accents and bridal statement pieces — enquire on WhatsApp.">
+<meta property="og:image" content="assets/img/necklace-glow.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23120d0b'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='%23d8b878' font-family='Georgia'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#120d0b;--ink2:#1c1411;--ink3:#271c17;--gold:#c9a66b;--gold2:#e7d1a3;--gold3:#f3e6c6;--ruby:#8e1f33;--cream:#f6f0e6;--muted:#b4a598;--line:rgba(231,209,163,.2);--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;--wa:#25d366}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--cream);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img,video{display:block;width:100%;height:100%;object-fit:cover}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(1200px,calc(100% - 48px));margin:auto}
+.eyebrow{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold2);font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 24px;background:var(--gold);color:#1c1410;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--gold);transition:.25s}
+.btn:hover{background:transparent;color:var(--gold2)}
+.btn.outline{background:transparent;color:var(--cream);border-color:rgba(255,255,255,.4)}.btn.outline:hover{border-color:var(--gold);color:var(--gold2)}
+.btn.wa{background:var(--wa);border-color:var(--wa);color:#08260f}.btn.wa:hover{background:transparent;color:var(--wa)}
+.btn svg{width:16px;height:16px;flex:none}
+
+/* announcement + nav */
+.announcement{padding:9px 16px;text-align:center;background:linear-gradient(90deg,#b8925a,#d8b878,#b8925a);color:#1d1511;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.announcement a{border-bottom:1px solid currentColor}
+header{position:sticky;top:0;z-index:20;transition:background .35s,border-color .35s;border-bottom:1px solid transparent}
+header.scrolled{background:rgba(18,13,11,.88);backdrop-filter:blur(12px);border-color:var(--line)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-family:var(--serif);font-size:28px;letter-spacing:.14em;line-height:1}
+.brand small{display:block;text-align:center;font:9px var(--sans);letter-spacing:.42em;color:var(--gold2);margin-top:5px}
+.navlinks{display:flex;gap:30px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#e9dfd4}
+.navlinks a:hover{color:var(--gold2)}
+.nav-cta{border:1px solid var(--gold);padding:11px 16px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;display:inline-flex;gap:8px;align-items:center}
+.nav-cta:hover{background:var(--gold);color:#1c1410}
+.nav-cta svg{width:14px;height:14px}
+
+/* hero */
+.hero{position:relative;min-height:calc(100vh - 116px);min-height:calc(100svh - 116px);margin-top:-78px;display:flex;align-items:center;overflow:hidden}
+.hero-media{position:absolute;inset:0}
+.hero-media video{object-position:62% center}
+.hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,8,7,.96) 0%,rgba(12,8,7,.8) 38%,rgba(12,8,7,.15) 75%),linear-gradient(0deg,var(--ink) 0%,transparent 25%,transparent 80%,rgba(0,0,0,.5))}
+.hero-content{position:relative;z-index:1;padding:150px 0 90px;max-width:600px}
+.hero h1{font:500 clamp(52px,7.2vw,96px)/.92 var(--serif);margin:22px 0;color:#fff;letter-spacing:-.025em}
+.hero h1 em{color:var(--gold2);font-weight:400}
+.hero p{max-width:470px;color:#d6cbc0;font-size:15px;line-height:1.85;margin:0}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.hero-meta{display:flex;gap:34px;margin-top:46px;padding-top:24px;border-top:1px solid var(--line);max-width:480px}
+.hero-meta div{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.hero-meta strong{display:block;font:500 26px/1.1 var(--serif);color:var(--gold2);letter-spacing:0;text-transform:none;margin-bottom:4px}
+.scroll-cue{position:absolute;z-index:2;left:50%;bottom:26px;transform:translateX(-50%);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll-cue span{width:1px;height:38px;background:linear-gradient(var(--gold),transparent);animation:cue 2s infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* marquee */
+.marquee{border-block:1px solid var(--line);overflow:hidden;background:var(--ink2)}
+.marquee-track{display:flex;gap:56px;padding:18px 0;width:max-content;animation:marq 38s linear infinite;font:italic 22px var(--serif);color:var(--gold2);white-space:nowrap}
+.marquee-track span:nth-child(even){color:var(--gold);font-style:normal;font-size:14px;align-self:center}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+section{padding:110px 0}
+.section-head{text-align:center;max-width:700px;margin:0 auto 54px}
+.section-head h2{font:500 clamp(38px,5vw,60px)/1 var(--serif);margin:15px 0;color:#f7f0e7}
+.section-head h2 em{color:var(--gold2);font-weight:400}
+.section-head p{font-size:14px;color:var(--muted);max-width:580px;margin:18px auto 0}
+
+/* video reels */
+.reels{background:radial-gradient(ellipse at top,#2a1d16 0%,var(--ink) 70%)}
+.reel-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr;grid-template-rows:auto auto;gap:18px}
+.reel{position:relative;overflow:hidden;background:#000;aspect-ratio:4/5;border:1px solid var(--line)}
+.reel.big{grid-row:span 2;aspect-ratio:auto;min-height:100%}
+.reel video{transition:transform 1s cubic-bezier(.2,.7,.2,1),opacity .4s}
+.reel:hover video{transform:scale(1.04)}
+.reel:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,7,6,.95) 0%,rgba(10,7,6,.75) 32%,rgba(10,7,6,.15) 58%,transparent 72%);pointer-events:none}
+.reel-copy{position:absolute;z-index:2;left:22px;right:22px;bottom:20px}
+.reel-copy span{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold2)}
+.reel-copy h3{font:500 28px/1.05 var(--serif);margin:7px 0 6px}
+.reel.big .reel-copy h3{font-size:38px}
+.reel-copy p{margin:0;font-size:12.5px;color:#d0c4b7;max-width:380px}
+.reel-copy .story{font:italic 16px/1.45 var(--serif);color:#eadfce;max-width:420px}
+.reel.big .reel-copy .story{font-size:19px}
+.lb-story{display:block;font:14px/1.6 var(--sans);font-style:normal;color:#d6cbc0;margin-top:6px}
+.play{position:absolute;z-index:3;top:18px;right:18px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(231,209,163,.55);background:rgba(18,13,11,.45);backdrop-filter:blur(6px);color:var(--gold2);display:grid;place-items:center;transition:.25s}
+.play:hover{background:var(--gold);color:#1c1410}
+.play svg{width:16px;height:16px}
+.reel-badge{position:absolute;z-index:3;top:20px;left:20px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding:6px 10px;background:rgba(18,13,11,.55);border:1px solid var(--line);display:flex;align-items:center;gap:7px}
+.reel-badge i{width:6px;height:6px;border-radius:50%;background:#e2455f;box-shadow:0 0 0 0 rgba(226,69,95,.6);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(226,69,95,0)}100%{box-shadow:0 0 0 0 rgba(226,69,95,0)}}
+
+/* collection */
+.collection-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.piece{background:var(--ink2);border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .3s,transform .3s}
+.piece:hover{border-color:rgba(231,209,163,.5);transform:translateY(-4px)}
+.piece-img{position:relative;aspect-ratio:4/3.4;overflow:hidden}
+.piece-img img{transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.piece:hover .piece-img img{transform:scale(1.06)}
+.piece-tag{position:absolute;top:14px;left:14px;font-size:9px;letter-spacing:.2em;text-transform:uppercase;background:rgba(18,13,11,.7);padding:6px 10px;color:var(--gold2)}
+.piece-body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
+.piece-body h3{font:500 30px/1.05 var(--serif);margin:0 0 10px}
+.piece-body p{font-size:13px;color:var(--muted);margin:0 0 16px}
+.specs{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:7px;font-size:12px;color:#d9cdbf}
+.specs li{display:flex;gap:10px;align-items:baseline}
+.specs li:before{content:"";width:5px;height:5px;transform:rotate(45deg);background:var(--gold);flex:none;margin-top:6px}
+.piece-cta{margin-top:auto;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:16px;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+.piece-cta a{color:var(--gold2);display:inline-flex;gap:8px;align-items:center}
+.piece-cta a:hover{color:#fff}
+.piece-cta small{color:var(--muted);font-size:10px;letter-spacing:.1em}
+
+/* craft */
+.craft{background:var(--cream);color:var(--ink)}
+.craft-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.craft .eyebrow{color:#8b6b3f}
+.craft h2{font:500 clamp(42px,5vw,64px)/.98 var(--serif);margin:16px 0 20px}
+.craft h2 em{color:#9b7745}
+.craft p{font-size:14px;color:#5f5248;line-height:1.95;margin:0 0 14px}
+.craft-media{position:relative}
+.craft-media .main{aspect-ratio:4/4.6;overflow:hidden}
+.craft-media .inset{position:absolute;width:46%;aspect-ratio:1;right:-28px;bottom:-34px;border:8px solid var(--cream);overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.steps{display:grid;gap:0;margin-top:28px;border-top:1px solid #d9ccb9}
+.step{display:grid;grid-template-columns:52px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid #d9ccb9}
+.step b{font:500 28px/1 var(--serif);color:#9b7745}
+.step h4{margin:0 0 3px;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.step span{font-size:13px;color:#6b5e54}
+
+/* bridal split */
+.bridal{position:relative;padding:0;overflow:hidden}
+.bridal-grid{display:grid;grid-template-columns:1fr 1fr;min-height:640px}
+.bridal-media{position:relative;overflow:hidden}
+.bridal-copy{display:flex;align-items:center;padding:80px 8%;background:linear-gradient(135deg,#2b1c17,#140e0c)}
+.bridal-copy h2{font:500 clamp(40px,4.6vw,60px)/1 var(--serif);margin:16px 0}
+.bridal-copy h2 em{color:var(--gold2)}
+.bridal-copy p{color:#c9bcaf;font-size:14px;line-height:1.9}
+.checks{list-style:none;padding:0;margin:24px 0 32px;display:grid;gap:12px}
+.checks li{display:flex;gap:12px;font-size:13.5px;color:#e5dacd}
+.checks svg{width:18px;height:18px;color:var(--gold);flex:none;margin-top:2px}
+
+/* experience */
+.exp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.exp{background:var(--ink);padding:34px 28px}
+.exp svg{width:30px;height:30px;color:var(--gold);margin-bottom:20px}
+.exp h3{font:500 25px/1.1 var(--serif);margin:0 0 10px}
+.exp p{font-size:13px;color:var(--muted);margin:0}
+
+/* enquiry */
+.enquire{background:linear-gradient(120deg,#2b1d18,#120d0b);border-top:1px solid var(--line)}
+.enq-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.enq-grid h2{font:500 clamp(40px,5vw,60px)/1 var(--serif);margin:15px 0}
+.enq-grid > div > p{color:#c6b9ad;font-size:14px;line-height:1.95}
+.contact-list{display:grid;gap:14px;margin-top:30px}
+.contact-item{display:flex;gap:16px;align-items:center;padding:18px 20px;border:1px solid var(--line);background:rgba(0,0,0,.18);transition:.25s}
+.contact-item:hover{border-color:var(--gold)}
+.contact-item svg{width:22px;height:22px;color:var(--gold2);flex:none}
+.contact-item small{display:block;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.contact-item strong{font-weight:500;font-size:15px;word-break:break-word}
+form.card{border:1px solid var(--line);padding:34px;background:rgba(0,0,0,.22)}
+form.card h3{font:500 30px var(--serif);margin:0 0 6px}
+form.card > p{font-size:12.5px;color:var(--muted);margin:0 0 22px}
+.field{display:grid;gap:7px;margin-bottom:16px}
+.field label{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2)}
+.field input,.field select,.field textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(231,209,163,.25);color:var(--cream);padding:13px 14px;font:14px var(--sans);border-radius:0;outline:none;transition:border-color .2s}
+.field select option{background:var(--ink2)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.form-actions .btn{flex:1}
+
+/* closing + footer */
+.closing{padding:100px 0;text-align:center;background:var(--cream);color:var(--ink)}
+.closing .eyebrow{color:#8b6b3f}
+.closing h2{font:500 clamp(42px,6vw,70px)/.98 var(--serif);max-width:800px;margin:17px auto}
+.closing p{font-size:14px;color:#6b5e54;max-width:560px;margin:20px auto 30px}
+footer{padding:46px 0 30px;background:#0c0908;color:#a99a8e}
+.footer-row{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap}
+.footer-brand{font:26px var(--serif);letter-spacing:.12em;color:var(--cream)}
+footer small{font-size:10px;letter-spacing:.08em}
+.footer-links{display:grid;gap:8px;font-size:12px}
+.footer-links a:hover{color:var(--gold2)}
+.footer-base{margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:11px}
+.footer-base a{color:var(--gold2)}
+
+/* floating whatsapp */
+.wa-float{position:fixed;z-index:30;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.35);transition:transform .25s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px;color:#fff}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:50;background:rgba(8,6,5,.94);display:none;align-items:center;justify-content:center;padding:24px}
+.lightbox.open{display:flex}
+.lightbox video{width:min(1100px,100%);height:auto;max-height:72vh;object-fit:contain;border:1px solid var(--line)}
+.lb-close{position:absolute;top:18px;right:18px;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--cream);font-size:22px}
+.lb-cap{position:absolute;bottom:22px;padding:0 20px;left:0;right:0;text-align:center;font:italic 20px var(--serif);color:var(--gold2)}
+
+/* mobile menu, swipe hint, bottom bar (hidden on desktop) */
+.burger{display:none;width:44px;height:44px;border:1px solid var(--line);background:transparent;position:relative;flex:none}
+.burger span{position:absolute;left:12px;right:12px;height:1px;background:var(--gold2);transition:transform .3s,top .3s}
+.burger span:first-child{top:17px}.burger span:last-child{top:26px}
+.burger[aria-expanded="true"] span:first-child{top:21px;transform:rotate(45deg)}
+.burger[aria-expanded="true"] span:last-child{top:21px;transform:rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:19;background:rgba(14,10,9,.98);backdrop-filter:blur(10px);padding:calc(100px + env(safe-area-inset-top)) 24px calc(84px + env(safe-area-inset-bottom));display:flex;flex-direction:column;justify-content:space-between;opacity:0;transition:opacity .3s;overflow-y:auto}
+.mnav[hidden]{display:none}
+.mnav.open{opacity:1}
+.mnav-links{display:grid}
+.mnav-links a{font:500 36px/1 var(--serif);padding:15px 0;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:16px}
+.mnav-links small{font:600 10px var(--sans);letter-spacing:.2em;color:var(--gold)}
+.mnav-foot{display:grid;gap:12px;margin-top:28px}
+.mnav-foot .btn{padding:17px 20px}
+.mnav-mail{text-align:center;font-size:13px;color:var(--muted);padding:8px}
+body.menu-open{overflow:hidden}
+body.menu-open header{background:transparent;border-color:transparent;backdrop-filter:none}
+.swipe-hint{display:none}
+.mbar{display:none}
+@media (hover:none){.reel:hover video,.piece:hover .piece-img img{transform:none}.piece:hover{transform:none}}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.marquee-track{animation:none}html{scroll-behavior:auto}}
+
+@media(max-width:960px){
+ .navlinks{display:none}.scroll-cue{display:none}
+ .hero-media:after{background:linear-gradient(90deg,rgba(12,8,7,.95) 0%,rgba(12,8,7,.82) 55%,rgba(12,8,7,.4) 100%),linear-gradient(0deg,var(--ink) 0%,transparent 25%)}
+ .reel-grid{grid-template-columns:1fr 1fr}
+ .reel.big{grid-column:span 2;grid-row:auto;aspect-ratio:16/10}
+ .collection-grid{grid-template-columns:1fr 1fr}
+ .craft-grid,.enq-grid{grid-template-columns:1fr;gap:50px}
+ .craft-media .inset{right:12px}
+ .bridal-grid{grid-template-columns:1fr}.bridal-media{min-height:480px}
+ .exp-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:960px){
+ .burger{display:block}
+ .nav-cta{display:none}
+}
+@media(max-width:600px){
+ html{-webkit-text-size-adjust:100%}
+ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+ .wrap{width:calc(100% - 32px)}
+ section{padding:72px 0}
+ .section-head{margin-bottom:36px}
+ .section-head h2{font-size:40px}
+ .section-head p{font-size:14px}
+ .announcement{font-size:8.5px;letter-spacing:.12em;padding:8px 12px}
+ .nav{height:64px}.brand{font-size:23px}
+ .hero{margin-top:-64px;min-height:100svh;align-items:flex-end}
+ .hero-media video{object-position:68% center}
+ .hero-media:after{background:linear-gradient(0deg,rgba(12,8,7,1) 0%,rgba(12,8,7,.85) 42%,rgba(12,8,7,.25) 75%,rgba(12,8,7,.5) 100%)}
+ .hero-content{padding:0 0 40px}
+ .hero h1{font-size:clamp(46px,13vw,58px);margin:16px 0}.hero p{font-size:14.5px;line-height:1.7}
+ .actions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:26px}
+ .actions .btn{padding:17px 20px;font-size:11px}
+ .hero-meta{gap:16px;margin-top:28px;padding-top:18px;justify-content:space-between}
+ .hero-meta div{font-size:8.5px}.hero-meta strong{font-size:20px}
+ .marquee-track{font-size:18px;padding:14px 0;gap:36px}
+
+ /* clips: horizontal swipe carousel */
+ .reels .wrap{width:100%}
+ .reels .section-head{padding:0 16px}
+ .swipe-hint{display:flex;justify-content:space-between;align-items:center;padding:0 16px 14px;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+ .swipe-hint b{font-weight:600;color:var(--gold2);letter-spacing:.1em}
+ .swipe-hint span:after{content:" \2192";color:var(--gold)}
+ .reel-grid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 16px 6px;scroll-padding:0 16px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+ .reel-grid::-webkit-scrollbar{display:none}
+ .reel,.reel.big{flex:0 0 84%;aspect-ratio:4/5.4;min-height:0;scroll-snap-align:start;grid-row:auto;grid-column:auto}
+ .reel-copy{left:18px;right:18px;bottom:18px}
+ .reel-copy h3,.reel.big .reel-copy h3{font-size:30px}
+ .reel-copy .story,.reel.big .reel-copy .story{font-size:16.5px}
+ .play{width:48px;height:48px}
+
+ .collection-grid{grid-template-columns:1fr;gap:18px}
+ .piece-body{padding:20px}
+ .piece-body h3{font-size:28px}
+ .piece-cta a{padding:10px 0}
+ .craft h2{font-size:44px}
+ .craft-media .inset{width:48%;right:10px;bottom:-22px;border-width:6px}
+ .bridal-media{min-height:62vh}
+ .bridal-copy{padding:56px 16px}
+ .bridal-copy .btn{width:100%}
+ .exp-grid{grid-template-columns:1fr}
+ .exp{padding:24px 20px;display:grid;grid-template-columns:40px 1fr;gap:4px 14px}
+ .exp svg{margin:0;grid-row:span 2}
+ .exp h3{font-size:23px;margin:0}
+ .enq-grid h2{font-size:42px}
+ .row2{grid-template-columns:1fr;gap:0}
+ form.card{padding:22px 18px}
+ .field input,.field select,.field textarea{font-size:16px;padding:14px;min-height:50px}
+ .form-actions{display:grid;grid-template-columns:1fr}
+ .form-actions .btn{padding:17px}
+ .closing{padding:72px 0}
+ .closing h2{font-size:42px}
+ .closing .btn{width:100%}
+ .footer-row{flex-direction:column;gap:22px}
+ .footer-links a{padding:4px 0}
+ .footer-base{flex-direction:column}
+
+ .wa-float{display:none}
+ .mbar{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;position:fixed;z-index:30;left:0;right:0;bottom:0;background:rgba(14,10,9,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+ .mbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;height:64px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cream)}
+ .mbar a + a{border-left:1px solid var(--line)}
+ .mbar svg{width:20px;height:20px;color:var(--gold2)}
+ .mbar .mbar-wa{background:var(--wa);color:#08260f;font-weight:700}
+ .mbar .mbar-wa svg{color:#08260f}
+
+ .lightbox{padding:0;flex-direction:column;justify-content:center;background:#000}
+ .lightbox video{max-height:70vh;border:0;border-block:1px solid var(--line)}
+ .lb-close{top:calc(14px + env(safe-area-inset-top));right:14px;width:48px;height:48px;background:rgba(0,0,0,.5)}
+ .lb-cap{position:static;padding:18px 20px 0;font-size:22px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.1 1.3 15.2.1 12 .1 5.5.1.2 5.4.2 12c0 2.1.5 4.1 1.6 5.9L.1 24l6.3-1.6c1.7.9 3.7 1.4 5.6 1.4 6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.5-8.3z"/></symbol>
+ <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15l13-7.5z"/></symbol>
+ <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M3 5.5h18v13H3zM3 6l9 7 9-7"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4 12h15m-5-5 5 5-5 5"/></symbol>
+ <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M4 12.5 9.5 18 20 6"/></symbol>
+</svg>
+
+<div class="announcement">Heirloom gold, crafted to be treasured · <a href="#enquire">Book a private viewing on WhatsApp</a></div>
+
+<header id="top">
+ <div class="wrap nav">
+  <a class="brand" href="#home" aria-label="Aurum Gallery home">AURUM<small>GALLERY</small></a>
+  <nav class="navlinks" aria-label="Main navigation">
+   <a href="#films">Films</a><a href="#collection">Collection</a><a href="#craft">Our Craft</a><a href="#bridal">Bridal</a><a href="#enquire">Contact</a>
+  </nav>
+  <a class="nav-cta" href="https://wa.me/919818116918?text=Hello%20Aurum%20Gallery%2C%20I%27d%20like%20to%20know%20more%20about%20your%20jewellery." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span class="lbl">WhatsApp Us</span></a>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><span></span><span></span></button>
+ </div>
+</header>
+<nav class="mnav" id="mnav" aria-label="Mobile navigation" hidden>
+ <div class="mnav-links">
+  <a href="#films"><small>01</small>Films</a><a href="#collection"><small>02</small>Collection</a><a href="#craft"><small>03</small>Our Craft</a><a href="#bridal"><small>04</small>Bridal</a><a href="#enquire"><small>05</small>Contact</a>
+ </div>
+ <div class="mnav-foot">
+  <a class="btn wa" href="https://wa.me/919818116918?text=Hello%20Aurum%20Gallery%2C%20I%27d%20like%20to%20know%20more%20about%20your%20jewellery." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Chat on WhatsApp</a>
+  <a class="btn outline" href="tel:+919818116918">Call +91 98181 16918</a>
+  <a class="mnav-mail" href="mailto:support@viraldigitallabs.in">support@viraldigitallabs.in</a>
+ </div>
+</nav>
+
+<main>
+ <section class="hero" id="home" style="padding:0">
+  <div class="hero-media">
+   <video autoplay muted loop playsinline preload="auto" poster="assets/img/necklace-glow.jpg"><source src="assets/video/hero-loop.mp4" type="video/mp4"></video>
+  </div>
+  <div class="wrap">
+   <div class="hero-content">
+    <div class="eyebrow">The art of adornment · Heirloom gold</div>
+    <h1>Jewels that<br><em>hold a story.</em></h1>
+    <p>Hand-finished filigree, ruby accents and the warm glow of gold. Discover statement necklaces made for weddings, festivals and the moments your family will remember for generations.</p>
+    <div class="actions">
+     <a class="btn" href="#films"><svg><use href="#i-play"/></svg>Watch the Collection</a>
+     <a class="btn outline" href="#enquire">Book a Private Viewing</a>
+    </div>
+    <div class="hero-meta">
+     <div><strong>Filigree</strong>Hand-finished detail</div>
+     <div><strong>Ruby-set</strong>Gemstone accents</div>
+     <div><strong>1:1</strong>Personal styling</div>
+    </div>
+   </div>
+  </div>
+  <div class="scroll-cue">Scroll<span></span></div>
+ </section>
+
+ <div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+   <span>Temple necklaces</span><span>✦</span><span>Bridal sets</span><span>✦</span><span>Ruby filigree</span><span>✦</span><span>Heirloom chokers</span><span>✦</span><span>Festive statements</span><span>✦</span><span>Custom commissions</span><span>✦</span>
+   <span>Temple necklaces</span><span>✦</span><span>Bridal sets</span><span>✦</span><span>Ruby filigree</span><span>✦</span><span>Heirloom chokers</span><span>✦</span><span>Festive statements</span><span>✦</span><span>Custom commissions</span><span>✦</span>
+  </div>
+ </div>
+
+ <section class="reels" id="films">
+  <div class="wrap">
+   <div class="section-head reveal">
+    <div class="eyebrow">The collection in motion</div>
+    <h2>See every detail <em>come alive.</em></h2>
+    <p>Gold is meant to be seen moving in the light. Watch our signature pieces up close — tap any film to play it full screen.</p>
+   </div>
+   <div class="swipe-hint" aria-hidden="true"><span>Swipe to watch</span><b id="reel-count">1 / 5</b></div>
+   <div class="reel-grid" id="reel-grid">
+    <article data-story="Seven ruby drops, one for every promise made at the mandap.|Worn by a bride today, kept by her daughter tomorrow." class="reel big reveal" data-video="assets/video/heirloom.mp4" data-title="The Heirloom Necklace">
+     <video autoplay muted loop playsinline preload="metadata" poster="assets/img/heirloom-necklace.jpg"><source src="assets/video/heirloom.mp4" type="video/mp4"></video>
+     <div class="reel-badge"><i></i>Featured film</div>
+     <button class="play" aria-label="Play The Heirloom Necklace full screen"><svg><use href="#i-play"/></svg></button>
+     <div class="reel-copy"><span>Film 01 · Signature piece</span><h3>The Heirloom Necklace</h3><p class="story">Seven ruby drops, one for every promise made at the mandap.<br>Worn by a bride today, kept by her daughter tomorrow.</p></div>
+    </article>
+    <article data-story="A single ruby, cradled in petals of hand-twisted gold.|Lean in close — every curl was shaped by a craftsman’s hand." class="reel reveal" data-video="assets/video/ruby-detail.mp4" data-title="Ruby &amp; Filigree, Up Close">
+     <video autoplay muted loop playsinline preload="metadata" poster="assets/img/ruby-detail.jpg"><source src="assets/video/ruby-detail.mp4" type="video/mp4"></video>
+     <button class="play" aria-label="Play Ruby and Filigree full screen"><svg><use href="#i-play"/></svg></button>
+     <div class="reel-copy"><span>Film 02 · Macro</span><h3>Ruby &amp; Filigree</h3><p class="story">A single ruby, cradled in petals of hand-twisted gold.<br>Lean in close — every curl was shaped by a craftsman’s hand.</p></div>
+    </article>
+    <article data-story="Maroon silk, warm gold and a quiet, confident smile.|The moment she looks in the mirror and sees her mother." class="reel reveal" data-video="assets/video/bride-portrait.mp4" data-title="Styled for the Bride">
+     <video autoplay muted loop playsinline preload="metadata" poster="assets/img/bride-portrait.jpg"><source src="assets/video/bride-portrait.mp4" type="video/mp4"></video>
+     <button class="play" aria-label="Play Styled for the Bride full screen"><svg><use href="#i-play"/></svg></button>
+     <div class="reel-copy"><span>Film 03 · Styled</span><h3>Styled for the Bride</h3><p class="story">Maroon silk, warm gold and a quiet, confident smile.<br>The moment she looks in the mirror and sees her mother.</p></div>
+    </article>
+    <article data-story="A collar that rests just so, framing the line of her neck.|Made to be seen from every angle, on every photograph." class="reel reveal" data-video="assets/video/bride-profile.mp4" data-title="The Profile View">
+     <video autoplay muted loop playsinline preload="metadata" poster="assets/img/bride-profile.jpg"><source src="assets/video/bride-profile.mp4" type="video/mp4"></video>
+     <button class="play" aria-label="Play The Profile View full screen"><svg><use href="#i-play"/></svg></button>
+     <div class="reel-copy"><span>Film 04 · Fit &amp; drape</span><h3>The Profile View</h3><p class="story">A collar that rests just so, framing the line of her neck.<br>Made to be seen from every angle, on every photograph.</p></div>
+    </article>
+    <article data-story="Midnight velvet, a single beam, and gold that answers back.|Some heirlooms don’t need words — only light." class="reel reveal" data-video="assets/video/hero-loop.mp4" data-title="In the Light">
+     <video autoplay muted loop playsinline preload="metadata" poster="assets/img/necklace-glow.jpg"><source src="assets/video/hero-loop.mp4" type="video/mp4"></video>
+     <button class="play" aria-label="Play In the Light full screen"><svg><use href="#i-play"/></svg></button>
+     <div class="reel-copy"><span>Film 05 · Atmosphere</span><h3>In the Light</h3><p class="story">Midnight velvet, a single beam, and gold that answers back.<br>Some heirlooms don’t need words — only light.</p></div>
+    </article>
+   </div>
+  </div>
+ </section>
+
+ <section id="collection">
+  <div class="wrap">
+   <div class="section-head reveal">
+    <div class="eyebrow">A signature selection</div>
+    <h2>Discover the <em>collection.</em></h2>
+    <p>Each design is shown here so you can shortlist before you visit. Ask us on WhatsApp for current availability, weight options and a personalised quote.</p>
+   </div>
+   <div class="collection-grid">
+    <article class="piece reveal">
+     <div class="piece-img"><img src="assets/img/necklace-spotlight.jpg" alt="Ornate gold necklace with floral medallions and ruby drops under a spotlight" loading="lazy"><span class="piece-tag">Bridal</span></div>
+     <div class="piece-body">
+      <h3>Rani Haar Heirloom</h3>
+      <p>A sculpted crescent collar built from repeating floral medallions, finished with a domed filigree pendant and a fringe of teardrop charms.</p>
+      <ul class="specs"><li>Hand-finished gold filigree work</li><li>Ruby-coloured centre stones</li><li>Seven teardrop drops with bead trim</li></ul>
+      <div class="piece-cta"><small>Price on request</small><a href="https://wa.me/919818116918?text=Hi%2C%20I%27m%20interested%20in%20the%20Rani%20Haar%20Heirloom%20necklace." target="_blank" rel="noopener">Enquire <svg width="16" height="16"><use href="#i-arrow"/></svg></a></div>
+     </div>
+    </article>
+    <article class="piece reveal">
+     <div class="piece-img"><img src="assets/img/ruby-detail.jpg" alt="Macro close-up of a ruby set in a gold flower with filigree around it" loading="lazy"><span class="piece-tag">Detail</span></div>
+     <div class="piece-body">
+      <h3>Padma Ruby Filigree</h3>
+      <p>The lotus motif in miniature — an oval ruby held in a beaded bezel, ringed by ribbed petals and hand-twisted gold scrollwork.</p>
+      <ul class="specs"><li>Beaded bezel stone setting</li><li>Granulated gold texture</li><li>Available as pendant or full set</li></ul>
+      <div class="piece-cta"><small>Price on request</small><a href="https://wa.me/919818116918?text=Hi%2C%20I%27m%20interested%20in%20the%20Padma%20Ruby%20Filigree%20design." target="_blank" rel="noopener">Enquire <svg width="16" height="16"><use href="#i-arrow"/></svg></a></div>
+     </div>
+    </article>
+    <article class="piece reveal">
+     <div class="piece-img"><img src="assets/img/bride-portrait.jpg" alt="Woman in a maroon silk saree wearing a gold filigree collar necklace" loading="lazy"><span class="piece-tag">Styled</span></div>
+     <div class="piece-body">
+      <h3>Maharani Collar Set</h3>
+      <p>Made to sit high and wide at the neckline, this collar frames the face and pairs beautifully with silk sarees and lehengas.</p>
+      <ul class="specs"><li>Layered scalloped collar</li><li>Medallion pendant centrepiece</li><li>Styling advice included</li></ul>
+      <div class="piece-cta"><small>Price on request</small><a href="https://wa.me/919818116918?text=Hi%2C%20I%27m%20interested%20in%20the%20Maharani%20Collar%20Set." target="_blank" rel="noopener">Enquire <svg width="16" height="16"><use href="#i-arrow"/></svg></a></div>
+     </div>
+    </article>
+   </div>
+  </div>
+ </section>
+
+ <section class="craft" id="craft">
+  <div class="wrap craft-grid">
+   <div class="craft-media reveal">
+    <div class="main"><img src="assets/img/necklace-glow.jpg" alt="Gold necklace glowing under a beam of light on dark velvet" loading="lazy" style="object-position:58% center"></div>
+    <div class="inset"><img src="assets/img/ruby-detail.jpg" alt="Close-up of ruby and gold filigree" loading="lazy"></div>
+   </div>
+   <div class="reveal">
+    <div class="eyebrow">Our craft</div>
+    <h2>Made slowly, <em>by hand.</em></h2>
+    <p>Our pieces draw on generations of Indian goldsmithing — sculpted medallions, delicate filigree and the warm, slightly antique finish that makes heirloom gold glow.</p>
+    <p>We would rather you take your time. Shortlist on this page, watch the films, then visit or video-call us to see the piece move before you decide.</p>
+    <div class="steps">
+     <div class="step"><b>01</b><div><h4>Shortlist</h4><span>Browse the films and collection, save what you love.</span></div></div>
+     <div class="step"><b>02</b><div><h4>Talk to a specialist</h4><span>Message us on WhatsApp for availability and options.</span></div></div>
+     <div class="step"><b>03</b><div><h4>See it in person</h4><span>Book a private viewing or a live video walkthrough.</span></div></div>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <section class="bridal" id="bridal">
+  <div class="bridal-grid">
+   <div class="bridal-media"><video autoplay muted loop playsinline preload="metadata" poster="assets/img/bride-profile.jpg"><source src="assets/video/bride-profile.mp4" type="video/mp4"></video></div>
+   <div class="bridal-copy reveal">
+    <div>
+     <div class="eyebrow">The bridal edit</div>
+     <h2>Your moment. <em>Your story.</em></h2>
+     <p>Choosing wedding jewellery should feel joyful, not rushed. Our specialists help you match pieces to your outfit, neckline and ceremony — and plan a full set across every function.</p>
+     <ul class="checks">
+      <li><svg><use href="#i-check"/></svg>Private, appointment-only bridal consultations</li>
+      <li><svg><use href="#i-check"/></svg>Outfit matching — share your saree or lehenga photos</li>
+      <li><svg><use href="#i-check"/></svg>Coordinated sets for mehendi, wedding and reception</li>
+      <li><svg><use href="#i-check"/></svg>Custom commissions on request</li>
+     </ul>
+     <a class="btn" href="https://wa.me/919818116918?text=Hi%2C%20I%27d%20like%20to%20book%20a%20bridal%20jewellery%20consultation." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Book a Bridal Consultation</a>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <section id="experience">
+  <div class="wrap">
+   <div class="section-head reveal">
+    <div class="eyebrow">The Aurum experience</div>
+    <h2>Beautiful jewellery, <em>beautifully chosen.</em></h2>
+   </div>
+   <div class="exp-grid reveal">
+    <div class="exp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 7h18v12H3zM8 7V5h8v2"/><circle cx="12" cy="13" r="3"/></svg><h3>Video walkthroughs</h3><p>Can't visit? We'll show you any piece live on a WhatsApp video call.</p></div>
+    <div class="exp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg><h3>One-to-one styling</h3><p>Personal attention from first look to final selection.</p></div>
+    <div class="exp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><h3>Clear guidance</h3><p>Ask us anything about purity, weight and care before you buy.</p></div>
+    <div class="exp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg><h3>Made to order</h3><p>Love a design but want a change? Ask about custom commissions.</p></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="enquire" id="enquire">
+  <div class="wrap enq-grid">
+   <div class="reveal">
+    <div class="eyebrow">Enquire · Visit · Video call</div>
+    <h2>Your next favourite piece is waiting.</h2>
+    <p>Ask about a design, check availability, or book a private viewing. The quickest way to reach us is WhatsApp — we reply with photos, videos and options.</p>
+    <div class="contact-list">
+     <a class="contact-item" href="https://wa.me/919818116918" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><div><small>WhatsApp / Call</small><strong>+91 98181 16918</strong></div></a>
+     <a class="contact-item" href="mailto:support@viraldigitallabs.in?subject=Jewellery%20Enquiry"><svg><use href="#i-mail"/></svg><div><small>Support email</small><strong>support@viraldigitallabs.in</strong></div></a>
+    </div>
+   </div>
+   <form class="card reveal" id="enquiry-form" novalidate>
+    <h3>Send an enquiry</h3>
+    <p>Fill this in and we'll open WhatsApp with your message ready to send.</p>
+    <div class="row2">
+     <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+     <div class="field"><label for="f-city">City</label><input id="f-city" name="city" autocomplete="address-level2"></div>
+    </div>
+    <div class="row2">
+     <div class="field"><label for="f-interest">Interested in</label>
+      <select id="f-interest" name="interest">
+       <option>Rani Haar Heirloom</option><option>Padma Ruby Filigree</option><option>Maharani Collar Set</option><option>Bridal consultation</option><option>Custom commission</option><option>Something else</option>
+      </select></div>
+     <div class="field"><label for="f-when">Occasion / date</label><input id="f-when" name="when" placeholder="e.g. Wedding, Feb 2027"></div>
+    </div>
+    <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" rows="3" placeholder="Tell us what you're looking for"></textarea></div>
+    <div class="form-actions">
+     <button class="btn wa" type="submit"><svg><use href="#i-wa"/></svg>Send on WhatsApp</button>
+     <button class="btn outline" type="button" id="send-email"><svg><use href="#i-mail"/></svg>Send by Email</button>
+    </div>
+   </form>
+  </div>
+ </section>
+
+ <section class="closing">
+  <div class="wrap reveal">
+   <div class="eyebrow">A little something extraordinary</div>
+   <h2>Come for the beauty.<br>Leave with a story.</h2>
+   <p>Watch the collection, shortlist your favourites and let us show you the craftsmanship up close.</p>
+   <a class="btn" href="https://wa.me/919818116918?text=Hi%2C%20I%27d%20like%20to%20plan%20a%20visit%20to%20see%20your%20jewellery." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Plan Your Visit</a>
+  </div>
+ </section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="footer-row">
+   <div><div class="footer-brand">AURUM GALLERY</div><small>THE ART OF ADORNMENT</small></div>
+   <div class="footer-links"><a href="#films">Films</a><a href="#collection">Collection</a><a href="#bridal">Bridal</a><a href="#enquire">Contact</a></div>
+   <div class="footer-links"><a href="https://wa.me/919818116918" target="_blank" rel="noopener">WhatsApp +91 98181 16918</a><a href="mailto:support@viraldigitallabs.in">support@viraldigitallabs.in</a></div>
+  </div>
+  <div class="footer-base"><span>© <span id="year"></span> Aurum Gallery. All rights reserved.</span><span>Website 360 showcase by <a href="https://www.viralaiworld.com" target="_blank" rel="noopener">Viral Digital Labs</a></span></div>
+ </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919818116918?text=Hello%20Aurum%20Gallery%2C%20I%27d%20like%20to%20know%20more%20about%20your%20jewellery." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<div class="mbar" aria-label="Quick contact">
+ <a href="https://wa.me/919818116918?text=Hello%20Aurum%20Gallery%2C%20I%27d%20like%20to%20know%20more%20about%20your%20jewellery." target="_blank" rel="noopener" class="mbar-wa"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+ <a href="tel:+919818116918"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>Call</a>
+ <a href="mailto:support@viraldigitallabs.in?subject=Jewellery%20Enquiry"><svg><use href="#i-mail"/></svg>Email</a>
+ <a href="#films"><svg><use href="#i-play"/></svg>Films</a>
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Video player">
+ <button class="lb-close" aria-label="Close video">×</button>
+ <video id="lb-video" controls playsinline></video>
+ <div class="lb-cap" id="lb-cap"></div>
+</div>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const header=document.querySelector('header');
+const onScroll=()=>header.classList.toggle('scrolled',scrollY>40);onScroll();addEventListener('scroll',onScroll,{passive:true});
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// play inline videos only while on screen
+const vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().catch(()=>{})}else{v.pause()}}),{threshold:.15});
+const saveData=navigator.connection&&navigator.connection.saveData;
+document.querySelectorAll('video[autoplay]').forEach(v=>{if(saveData){v.removeAttribute('autoplay');v.preload='none';return}vio.observe(v)});
+
+// mobile menu
+const burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
+function setMenu(open){burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Close menu':'Open menu');document.body.classList.toggle('menu-open',open);
+ if(open){mnav.hidden=false;requestAnimationFrame(()=>mnav.classList.add('open'))}else{mnav.classList.remove('open');setTimeout(()=>{if(!mnav.classList.contains('open'))mnav.hidden=true},300)}}
+burger.addEventListener('click',()=>setMenu(burger.getAttribute('aria-expanded')!=='true'));
+mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+addEventListener('resize',()=>{if(innerWidth>960)setMenu(false)});
+
+// clip carousel counter (phones)
+const rg=document.getElementById('reel-grid'),rc=document.getElementById('reel-count'),reels=[...rg.children];
+rg.addEventListener('scroll',()=>{const w=reels[0].offsetWidth+12;rc.textContent=Math.min(reels.length,Math.round(rg.scrollLeft/w)+1)+' / '+reels.length},{passive:true});
+
+// lightbox
+const lb=document.getElementById('lightbox'),lbv=document.getElementById('lb-video'),lbc=document.getElementById('lb-cap');
+function openLB(src,title,story){lbv.src=src;lbc.innerHTML=title+(story?'<span class="lb-story">'+story.split('|').join('<br>')+'</span>':'');lb.classList.add('open');lbv.play().catch(()=>{});document.body.style.overflow='hidden'}
+function closeLB(){lbv.pause();lbv.removeAttribute('src');lbv.load();lb.classList.remove('open');document.body.style.overflow=''}
+document.querySelectorAll('.reel').forEach(r=>r.addEventListener('click',()=>openLB(r.dataset.video,r.dataset.title,r.dataset.story)));
+lb.addEventListener('click',e=>{if(e.target===lb||e.target.classList.contains('lb-close'))closeLB()});
+addEventListener('keydown',e=>{if(e.key==='Escape'){if(lb.classList.contains('open'))closeLB();else setMenu(false)}});
+
+// enquiry form -> WhatsApp / email
+const form=document.getElementById('enquiry-form');
+function compose(){const d=new FormData(form);return encodeURIComponent(`Hello Aurum Gallery,\n\nName: ${val(d.get('name'))}\nCity: ${val(d.get('city'))}\nInterested in: ${val(d.get('interest'))}\nOccasion/date: ${val(d.get('when'))}\n\n${val(d.get('message'))}`)}
+function val(v){return (v||'').toString().trim()||'-'}
+function check(){const n=form.querySelector('#f-name');if(!n.value.trim()){n.focus();n.style.borderColor='#e2455f';return false}n.style.borderColor='';return true}
+form.addEventListener('submit',e=>{e.preventDefault();if(!check())return;window.open('https://wa.me/919818116918?text='+compose(),'_blank','noopener')});
+document.getElementById('send-email').addEventListener('click',()=>{if(!check())return;location.href='mailto:support@viraldigitallabs.in?subject=Jewellery%20Enquiry&body='+compose()});
+</script>
+</body>
+</html>
