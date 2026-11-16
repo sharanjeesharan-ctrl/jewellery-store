@@ -384,6 +384,61 @@ body.menu-open header{background:transparent;border-color:transparent;backdrop-f
 .hero-static .hero-media{transform:none}
 @media (prefers-reduced-motion:reduce){.js .dpw .w,.js .dpl{opacity:1}.hero-curtain{display:none!important}}
 
+/* ---- Scroll FX (21st.dev ports): hero frame, zoom parallax, velocity marquee, text reveal, parallax ---- */
+.hero{background:var(--ink)}
+.hero:before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;border:1px solid rgba(231,209,163,calc(.55 * var(--frame,0)));border-radius:calc(30px * var(--frame,0));margin:calc(7% * var(--frame,0)) calc(5% * var(--frame,0));box-shadow:0 0 calc(60px * var(--frame,0)) rgba(201,166,107,calc(.35 * var(--frame,0)))}
+.svt{border-block:1px solid var(--line);background:var(--ink2);padding:10px 0;overflow:hidden}
+.svt-row{overflow:hidden;white-space:nowrap}
+.svt-track{display:inline-flex;will-change:transform}
+.svt-block{display:inline-flex;align-items:center;flex:none}
+.svt-block span{font:italic 24px var(--serif);color:var(--gold2);padding:0 26px}
+.svt-block i{font-style:normal;color:var(--gold);font-size:13px}
+.svt-alt .svt-block span{font:600 13px var(--sans);letter-spacing:.24em;text-transform:uppercase;color:rgba(231,209,163,.45)}
+.zp{position:relative;height:300vh;background:var(--ink)}
+.zp-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.zp-tile{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;will-change:transform;pointer-events:none}
+.zp-box{position:relative;width:25vw;height:25vh;overflow:hidden;border-radius:6px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.zp-box img,.zp-box video{width:100%;height:100%;object-fit:cover}
+.zp-1 .zp-box{top:-30vh;left:5vw;width:35vw;height:30vh}
+.zp-2 .zp-box{top:-10vh;left:-25vw;width:20vw;height:45vh}
+.zp-3 .zp-box{left:27.5vw;width:25vw;height:25vh}
+.zp-4 .zp-box{top:27.5vh;left:5vw;width:20vw;height:25vh}
+.zp-5 .zp-box{top:27.5vh;left:-22.5vw;width:30vw;height:25vh}
+.zp-6 .zp-box{top:22.5vh;left:25vw;width:15vw;height:15vh}
+.zp-0{z-index:2}
+.zp-0 .zp-box:after{content:"";position:absolute;inset:0;border:1px solid rgba(231,209,163,.5);border-radius:inherit;pointer-events:none}
+.zp-caption{position:absolute;z-index:3;left:0;right:0;top:9vh;text-align:center;pointer-events:none}
+.zp-caption h2{font:500 clamp(34px,4.6vw,58px)/1 var(--serif);margin:12px 0 0;color:#f7f0e7;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.zp-caption h2 em{color:var(--gold2);font-weight:400}
+.treveal{position:relative;height:200vh;background:radial-gradient(ellipse at 50% 50%,#24180f 0%,var(--ink) 70%)}
+.treveal-sticky{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center}
+.treveal .wrap{max-width:1000px}
+.treveal-text{font:500 clamp(30px,4.2vw,56px)/1.22 var(--serif);margin:18px 0 0;color:#f7f0e7}
+.tw{position:relative;display:inline-block}
+.tw-ghost{position:absolute;left:0;top:0;opacity:.16}
+.tw-ink{opacity:0;transition:opacity .15s linear}
+.tw-gold .tw-ink{color:var(--gold2);font-style:italic}
+[data-parallax]{overflow:hidden}
+[data-parallax] img,[data-parallax] video{transform:translate3d(0,var(--plx,0px),0) scale(1.18);will-change:transform}
+.sfx-static .zp{height:auto}.sfx-static .zp-stage{position:relative;height:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:60px 16px}
+.sfx-static .zp-tile{position:relative;inset:auto}.sfx-static .zp-box{position:static;width:100%;height:220px}.sfx-static .zp-caption{position:static;grid-column:1/-1;order:-1}
+.sfx-static .treveal{height:auto;padding:100px 0}.sfx-static .treveal-sticky{position:static;height:auto}.sfx-static .tw-ink{opacity:1}
+.sfx-static [data-parallax] img,.sfx-static [data-parallax] video{transform:none}
+@media(max-width:600px){
+ .zp{height:240vh}
+ .zp-box{width:40vw;height:22vh}
+ .zp-1 .zp-box{top:-30vh;left:6vw;width:48vw;height:22vh}
+ .zp-2 .zp-box{top:-6vh;left:-30vw;width:30vw;height:30vh}
+ .zp-3 .zp-box{left:32vw;width:30vw;height:20vh}
+ .zp-4 .zp-box{top:27vh;left:8vw;width:34vw;height:18vh}
+ .zp-5 .zp-box{top:26vh;left:-26vw;width:40vw;height:16vh}
+ .zp-6 .zp-box{top:-24vh;left:-30vw;width:24vw;height:12vh}
+ .zp-caption{top:12vh;padding:0 16px}
+ .treveal{height:180vh}
+ .treveal-text{font-size:28px;line-height:1.28}
+ .svt-block span{font-size:19px;padding:0 18px}
+}
+
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
 .reveal.visible{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.marquee-track{animation:none}html{scroll-behavior:auto}}
@@ -545,12 +600,23 @@ body.menu-open header{background:transparent;border-color:transparent;backdrop-f
   <div class="scroll-cue">Scroll<span></span></div>
  </section>
 
- <div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-   <span>Temple necklaces</span><span>✦</span><span>Bridal sets</span><span>✦</span><span>Ruby filigree</span><span>✦</span><span>Heirloom chokers</span><span>✦</span><span>Festive statements</span><span>✦</span><span>Custom commissions</span><span>✦</span>
-   <span>Temple necklaces</span><span>✦</span><span>Bridal sets</span><span>✦</span><span>Ruby filigree</span><span>✦</span><span>Heirloom chokers</span><span>✦</span><span>Festive statements</span><span>✦</span><span>Custom commissions</span><span>✦</span>
-  </div>
+ <div class="svt" aria-hidden="true">
+  <div class="svt-row" data-dir="1" data-speed="2.6"><div class="svt-track"><div class="svt-block"><span>Temple necklaces</span><i>✦</i><span>Bridal sets</span><i>✦</i><span>Ruby filigree</span><i>✦</i><span>Heirloom chokers</span><i>✦</i><span>Festive statements</span><i>✦</i><span>Custom commissions</span><i>✦</i></div></div></div>
+  <div class="svt-row svt-alt" data-dir="-1" data-speed="2.6"><div class="svt-track"><div class="svt-block"><span>Hand-finished</span><i>✦</i><span>Kundan &amp; polki</span><i>✦</i><span>Antique gold</span><i>✦</i><span>Made to order</span><i>✦</i><span>Private viewings</span><i>✦</i><span>Video walkthroughs</span><i>✦</i></div></div></div>
  </div>
+
+ <section class="zp" aria-label="The collection, up close">
+  <div class="zp-stage">
+    <div class="zp-tile zp-0"><div class="zp-box"><video muted loop playsinline preload="metadata" poster="assets/img/heirloom-necklace.jpg"><source src="assets/video/heirloom.mp4" type="video/mp4"></video></div></div>
+    <div class="zp-tile zp-1"><div class="zp-box"><img src="assets/img/necklace-spotlight.jpg" alt="Gold necklace with ruby drops under a spotlight" loading="lazy"></div></div>
+    <div class="zp-tile zp-2"><div class="zp-box"><img src="assets/img/bride-portrait.jpg" alt="Bride in a maroon saree wearing a gold collar" loading="lazy"></div></div>
+    <div class="zp-tile zp-3"><div class="zp-box"><img src="assets/img/ruby-detail.jpg" alt="Ruby set in hand-twisted gold filigree" loading="lazy"></div></div>
+    <div class="zp-tile zp-4"><div class="zp-box"><img src="assets/img/necklace-glow.jpg" alt="Gold necklace glowing under a beam of light" loading="lazy"></div></div>
+    <div class="zp-tile zp-5"><div class="zp-box"><img src="assets/img/bride-profile.jpg" alt="Profile of a bride wearing a gold collar" loading="lazy"></div></div>
+    <div class="zp-tile zp-6"><div class="zp-box"><img src="assets/img/heirloom-necklace.jpg" alt="Heirloom gold necklace on velvet" loading="lazy"></div></div>
+    <div class="zp-caption"><div class="eyebrow">Scroll to look closer</div><h2>Every detail, <em>up close.</em></h2></div>
+  </div>
+ </section>
 
  <section class="reels" id="films">
   <div class="wrap">
@@ -670,10 +736,16 @@ body.menu-open header{background:transparent;border-color:transparent;backdrop-f
   </div>
  </section>
 
+ <section class="treveal" aria-label="Our promise">
+  <div class="treveal-sticky">
+   <div class="wrap"><div class="eyebrow">Our promise</div><p class="treveal-text">Every piece we make carries a promise — of the hands that shaped it, the family that wears it, and the generations who will inherit it. This is not jewellery for a season. It is an heirloom from the first day.</p></div>
+  </div>
+ </section>
+
  <section class="craft" id="craft">
   <div class="wrap craft-grid">
    <div class="craft-media reveal">
-    <div class="main"><img src="assets/img/necklace-glow.jpg" alt="Gold necklace glowing under a beam of light on dark velvet" loading="lazy" style="object-position:58% center"></div>
+    <div class="main" data-parallax="0.10"><img src="assets/img/necklace-glow.jpg" alt="Gold necklace glowing under a beam of light on dark velvet" loading="lazy" style="object-position:58% center"></div>
     <div class="inset"><img src="assets/img/ruby-detail.jpg" alt="Close-up of ruby and gold filigree" loading="lazy"></div>
    </div>
    <div class="reveal">
@@ -692,7 +764,7 @@ body.menu-open header{background:transparent;border-color:transparent;backdrop-f
 
  <section class="bridal" id="bridal">
   <div class="bridal-grid">
-   <div class="bridal-media"><video autoplay muted loop playsinline preload="metadata" poster="assets/img/bride-profile.jpg"><source src="assets/video/bride-profile.mp4" type="video/mp4"></video></div>
+   <div class="bridal-media" data-parallax="0.12"><video autoplay muted loop playsinline preload="metadata" poster="assets/img/bride-profile.jpg"><source src="assets/video/bride-profile.mp4" type="video/mp4"></video></div>
    <div class="bridal-copy reveal">
     <div>
      <div class="eyebrow">The bridal edit</div>
@@ -840,5 +912,6 @@ document.getElementById('send-email').addEventListener('click',()=>{if(!check())
 <script src="assets/js/dual-stage.js" defer></script>
 <script src="assets/js/three-d.js" defer></script>
 <script src="assets/js/hero-pro.js" defer></script>
+<script src="assets/js/scroll-fx.js" defer></script>
 </body>
 </html>
