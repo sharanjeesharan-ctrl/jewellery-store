@@ -138,6 +138,18 @@ section{padding:110px 0}
 .craft h2 em{color:#9b7745}
 .craft p{font-size:14px;color:#5f5248;line-height:1.95;margin:0 0 14px}
 .craft-media{position:relative}
+/* 3D Card Effect (Aceternity, via 21st.dev) */
+.cc-container{perspective:1000px}
+.cc-card{transform-style:preserve-3d;transition:transform .2s linear;will-change:transform}
+.cc-card > *{transform-style:preserve-3d}
+.cc-item{transition:transform .2s linear,box-shadow .3s}
+.cc-card.cc-on .inset{box-shadow:0 40px 70px rgba(0,0,0,.4)}
+.cc-badge{position:absolute;left:-22px;top:28px;z-index:3;padding:14px 18px;background:rgba(18,13,11,.88);border:1px solid rgba(201,166,107,.6);box-shadow:0 18px 40px rgba(0,0,0,.35);backdrop-filter:blur(6px);pointer-events:none}
+.cc-badge span{display:block;font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.cc-badge strong{display:block;font:500 22px/1.1 var(--serif);color:var(--gold3);margin-top:4px}
+.cc-glow{position:absolute;inset:8% 6% -4% 6%;z-index:-1;background:radial-gradient(closest-side,rgba(201,166,107,.45),transparent 75%);filter:blur(30px);opacity:0;transition:opacity .4s,transform .2s linear;pointer-events:none}
+.cc-card.cc-on .cc-glow{opacity:1}
+@media(max-width:600px){.cc-badge{left:8px;top:12px;padding:10px 13px}.cc-badge strong{font-size:18px}}
 .craft-media .main{aspect-ratio:4/4.6;overflow:hidden}
 .craft-media .inset{position:absolute;width:46%;aspect-ratio:1;right:-28px;bottom:-34px;border:8px solid var(--cream);overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.25)}
 .steps{display:grid;gap:0;margin-top:28px;border-top:1px solid #d9ccb9}
@@ -744,9 +756,13 @@ body.menu-open header{background:transparent;border-color:transparent;backdrop-f
 
  <section class="craft" id="craft">
   <div class="wrap craft-grid">
-   <div class="craft-media reveal">
-    <div class="main" data-parallax="0.10"><img src="assets/img/necklace-glow.jpg" alt="Gold necklace glowing under a beam of light on dark velvet" loading="lazy" style="object-position:58% center"></div>
-    <div class="inset"><img src="assets/img/ruby-detail.jpg" alt="Close-up of ruby and gold filigree" loading="lazy"></div>
+   <div class="cc-container reveal">
+    <div class="craft-media cc-card">
+     <div class="main cc-item" data-tz="40" data-parallax="0.10"><img src="assets/img/necklace-glow.jpg" alt="Gold necklace glowing under a beam of light on dark velvet" loading="lazy" style="object-position:58% center"></div>
+     <div class="inset cc-item" data-tz="110" data-rz="-4"><img src="assets/img/ruby-detail.jpg" alt="Close-up of ruby and gold filigree" loading="lazy"></div>
+     <div class="cc-badge cc-item" data-tz="150" data-tx="-6"><span>Hand-finished</span><strong>Filigree &amp; ruby</strong></div>
+     <div class="cc-glow cc-item" data-tz="20" aria-hidden="true"></div>
+    </div>
    </div>
    <div class="reveal">
     <div class="eyebrow">Our craft</div>
@@ -913,5 +929,6 @@ document.getElementById('send-email').addEventListener('click',()=>{if(!check())
 <script src="assets/js/three-d.js" defer></script>
 <script src="assets/js/hero-pro.js" defer></script>
 <script src="assets/js/scroll-fx.js" defer></script>
+<script src="assets/js/card3d.js" defer></script>
 </body>
 </html>
