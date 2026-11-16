@@ -48,7 +48,20 @@ header.scrolled{background:rgba(18,13,11,.88);backdrop-filter:blur(12px);border-
 /* hero */
 .hero{position:relative;min-height:calc(100vh - 116px);min-height:calc(100svh - 116px);margin-top:-78px;display:flex;align-items:center;overflow:hidden}
 .hero-media{position:absolute;inset:0}
-.hero-media video{object-position:62% center}
+.hero-media video{object-position:62% center;filter:saturate(1.12) contrast(1.06);animation:heroBreath 14s ease-in-out infinite alternate}
+@keyframes heroBreath{from{transform:scale(1)}to{transform:scale(1.06)}}
+/* hero video effects (ported from 21st.dev: God Rays, Sparkles, Spotlight Background) */
+.hero-fx{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-fx canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.fx-rays{mix-blend-mode:screen;opacity:.75;filter:blur(2.5px);-webkit-mask-image:radial-gradient(ellipse 75% 95% at 66% 0%,#000 35%,transparent 80%);mask-image:radial-gradient(ellipse 75% 95% at 66% 0%,#000 35%,transparent 80%);animation:raysIn 2.4s ease-out both}
+@keyframes raysIn{from{opacity:0}to{opacity:.75}}
+.fx-sparkles{mix-blend-mode:screen;-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.35) 0%,#000 45%);mask-image:linear-gradient(90deg,rgba(0,0,0,.35) 0%,#000 45%)}
+.fx-sheen{position:absolute;inset:-20% -60%;background:linear-gradient(105deg,transparent 42%,rgba(255,232,180,.16) 48%,rgba(255,244,214,.28) 50%,rgba(255,232,180,.16) 52%,transparent 58%);mix-blend-mode:screen;transform:translateX(-60%);animation:sheen 9s cubic-bezier(.55,.1,.35,1) 1.5s infinite}
+@keyframes sheen{0%{transform:translateX(-60%)}35%,100%{transform:translateX(60%)}}
+.fx-spot{position:absolute;left:0;top:0;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(243,214,150,.32) 0%,rgba(201,166,107,.12) 38%,transparent 70%);mix-blend-mode:screen;opacity:0;transition:opacity .5s,width .3s ease-out,height .3s ease-out;will-change:transform}
+.fx-spot.on{opacity:1}.fx-spot.moving{width:270px;height:270px}
+.fx-static .fx-sheen{animation:none;opacity:0}
+@media (prefers-reduced-motion:reduce){.hero-media video{animation:none}.fx-sheen{display:none}}
 .hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,8,7,.96) 0%,rgba(12,8,7,.8) 38%,rgba(12,8,7,.15) 75%),linear-gradient(0deg,var(--ink) 0%,transparent 25%,transparent 80%,rgba(0,0,0,.5))}
 .hero-content{position:relative;z-index:1;padding:150px 0 90px;max-width:600px}
 .hero h1{font:500 clamp(52px,7.2vw,96px)/.92 var(--serif);margin:22px 0;color:#fff;letter-spacing:-.025em}
@@ -252,6 +265,8 @@ body.menu-open header{background:transparent;border-color:transparent;backdrop-f
  .nav{height:64px}.brand{font-size:23px}
  .hero{margin-top:-64px;min-height:100svh;align-items:flex-end}
  .hero-media video{object-position:68% center}
+ .fx-rays{opacity:.5;-webkit-mask-image:radial-gradient(ellipse 120% 70% at 60% 0%,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse 120% 70% at 60% 0%,#000 30%,transparent 80%)}
+ .fx-sparkles{-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 55%,rgba(0,0,0,.25) 85%);mask-image:linear-gradient(180deg,#000 0%,#000 55%,rgba(0,0,0,.25) 85%)}
  .hero-media:after{background:linear-gradient(0deg,rgba(12,8,7,1) 0%,rgba(12,8,7,.85) 42%,rgba(12,8,7,.25) 75%,rgba(12,8,7,.5) 100%)}
  .hero-content{padding:0 0 40px}
  .hero h1{font-size:clamp(46px,13vw,58px);margin:16px 0}.hero p{font-size:14.5px;line-height:1.7}
@@ -352,6 +367,12 @@ body.menu-open header{background:transparent;border-color:transparent;backdrop-f
  <section class="hero" id="home" style="padding:0">
   <div class="hero-media">
    <video autoplay muted loop playsinline preload="auto" poster="assets/img/necklace-glow.jpg"><source src="assets/video/hero-loop.mp4" type="video/mp4"></video>
+  </div>
+  <div class="hero-fx" aria-hidden="true">
+   <canvas class="fx-rays"></canvas>
+   <div class="fx-sheen"></div>
+   <canvas class="fx-sparkles"></canvas>
+   <div class="fx-spot"></div>
   </div>
   <div class="wrap">
    <div class="hero-content">
@@ -623,5 +644,6 @@ function check(){const n=form.querySelector('#f-name');if(!n.value.trim()){n.foc
 form.addEventListener('submit',e=>{e.preventDefault();if(!check())return;window.open('https://wa.me/919818116918?text='+compose(),'_blank','noopener')});
 document.getElementById('send-email').addEventListener('click',()=>{if(!check())return;location.href='mailto:support@viraldigitallabs.in?subject=Jewellery%20Enquiry&body='+compose()});
 </script>
+<script src="assets/js/hero-fx.js" defer></script>
 </body>
 </html>
