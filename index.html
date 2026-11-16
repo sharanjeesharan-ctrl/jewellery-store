@@ -292,6 +292,66 @@ body.menu-open header{background:transparent;border-color:transparent;backdrop-f
 }
 @media (prefers-reduced-motion:reduce){.dcard-ring,.dstage-aura{animation:none}}
 
+/* ---- 3D: container scroll (signature film) ---- */
+.cscroll{padding:90px 0 40px;overflow:hidden;background:radial-gradient(ellipse at 50% 30%,#2a1c15 0%,var(--ink) 65%)}
+.cscroll-inner{width:min(1100px,calc(100% - 48px));margin:auto;perspective:1000px}
+.cscroll-head{text-align:center;max-width:720px;margin:0 auto;will-change:transform}
+.cscroll-head h2{font:500 clamp(40px,5.4vw,66px)/1 var(--serif);margin:15px 0}
+.cscroll-head h2 em{color:var(--gold2);font-weight:400}
+.cscroll-head p{font:italic 19px/1.5 var(--serif);color:#d8ccbf;margin:0 auto 10px;max-width:560px}
+.cscroll-card{margin:30px auto 0;height:min(620px,62vw);max-width:1000px;border:3px solid #6b5636;border-radius:30px;padding:12px;background:linear-gradient(145deg,#2b2018,#140e0b);transform:rotateX(20deg) scale(1.05);transform-origin:50% 0;will-change:transform;box-shadow:0 0 #0000004d,0 9px 20px #0000004a,0 37px 37px #00000042,0 84px 50px #00000026,0 149px 60px #0000000a,0 0 calc(80px * var(--glow,.3)) rgba(201,166,107,calc(.35 * var(--glow,.3)))}
+.cscroll-screen{position:relative;height:100%;border-radius:20px;overflow:hidden;background:#000}
+.cscroll-screen:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,7,6,.6),transparent 40%);pointer-events:none}
+.cscroll-play{position:absolute;z-index:2;left:50%;bottom:28px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border:1px solid var(--gold);background:rgba(18,13,11,.65);backdrop-filter:blur(8px);color:var(--gold2);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;transition:.25s}
+.cscroll-play:hover{background:var(--gold);color:#1c1410}
+.cscroll-play svg{width:14px;height:14px}
+
+/* ---- 3D: curved lens carousel ---- */
+.lens{padding:100px 0 90px;background:linear-gradient(180deg,var(--ink),#1a120f 50%,var(--ink));overflow:hidden}
+.lens-stage{position:relative;height:clamp(380px,46vw,540px);perspective:1100px;perspective-origin:50% 45%;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none;outline:none}
+.lens-stage.dragging{cursor:grabbing}
+.lens-stage:focus-visible{box-shadow:inset 0 0 0 1px var(--gold)}
+.lens-track{position:absolute;inset:0;transform-style:preserve-3d}
+.lens-card{position:absolute;left:50%;top:50%;width:clamp(200px,22vw,300px);aspect-ratio:4/5;margin:0;translate:-50% -50%;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 30px 60px rgba(0,0,0,.55);border:1px solid rgba(231,209,163,.28);will-change:transform,filter;-webkit-tap-highlight-color:transparent}
+.lens-card img{pointer-events:none}
+.lens-card:after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,rgba(255,240,210,.14),transparent 30%);pointer-events:none}
+.lens-bar{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:26px;text-align:center}
+.lens-info{display:grid;gap:4px;min-height:78px;justify-items:center}
+.lens-kicker{font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.lens-title{font:500 32px/1.05 var(--serif);color:#f7f0e7}
+.lens-cap{font-size:13px;color:var(--muted)}
+.lens-nav{display:flex;align-items:center;gap:10px}
+.lens-count{font:500 15px var(--sans);letter-spacing:.12em;color:var(--gold2);margin-right:8px}
+.lens-nav button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--cream);font-size:18px;transition:.25s}
+.lens-nav button:hover{border-color:var(--gold);background:var(--gold);color:#1c1410}
+
+/* ---- 3D: tilt cards ---- */
+.tilt{transform-style:preserve-3d}
+.piece.tilt.visible,.reel.tilt.visible{transform:perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(var(--ts,1));transition:opacity .8s,transform .35s cubic-bezier(.23,1,.32,1),border-color .3s}
+.piece.tilt.visible:hover{transform:perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(var(--ts,1))}
+.tilt-sheen{position:absolute;inset:0;z-index:4;pointer-events:none;opacity:0;transition:opacity .3s;mix-blend-mode:overlay;background:radial-gradient(circle at var(--px,50%) var(--py,50%),rgba(255,226,160,.55) 0%,rgba(201,166,107,.18) 30%,transparent 65%)}
+.tilt-sheen:after{content:"";position:absolute;inset:0;mix-blend-mode:screen;background:radial-gradient(circle 110px at var(--px,50%) var(--py,50%),rgba(255,236,190,.16),transparent 70%)}
+.tilting .tilt-sheen{opacity:1}
+.piece{position:relative}
+
+@media(max-width:600px){
+ .cscroll{padding:70px 0 20px}
+ .cscroll-inner{width:calc(100% - 24px)}
+ .cscroll-head p{font-size:17px}
+ .cscroll-card{height:auto;aspect-ratio:4/5;border-radius:22px;padding:8px}
+ .cscroll-screen{border-radius:15px}
+ .cscroll-play{bottom:18px;padding:12px 18px;white-space:nowrap}
+ .lens{padding:72px 0 64px}
+ .lens-stage{height:420px}
+ .lens-card{width:62vw;border-radius:14px}
+ .lens-bar{flex-direction:column;align-items:stretch;gap:14px}
+ .lens-info{min-height:0;text-align:center}
+ .lens-title{font-size:28px}
+ .lens-nav{justify-content:flex-start;align-self:flex-start;padding-left:16px}
+ .lens-count{order:3;margin:0 0 0 10px}
+}
+@media (prefers-reduced-motion:reduce){.cscroll-card{transform:none}}
+
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
 .reveal.visible{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.marquee-track{animation:none}html{scroll-behavior:auto}}
@@ -497,6 +557,22 @@ body.menu-open header{background:transparent;border-color:transparent;backdrop-f
   </div>
  </section>
 
+ <section class="cscroll" id="signature" aria-label="Signature piece film">
+  <div class="cscroll-inner">
+   <div class="cscroll-head">
+    <div class="eyebrow">The signature piece</div>
+    <h2>Unveiling the <em>Heirloom Necklace.</em></h2>
+    <p>Seven ruby drops, one for every promise made at the mandap. Worn by a bride today, kept by her daughter tomorrow.</p>
+   </div>
+   <div class="cscroll-card">
+    <div class="cscroll-screen">
+     <video muted loop playsinline preload="metadata" poster="assets/img/heirloom-necklace.jpg"><source src="assets/video/heirloom.mp4" type="video/mp4"></video>
+     <button class="cscroll-play" type="button" data-video="assets/video/heirloom.mp4" data-title="The Heirloom Necklace" data-story="Seven ruby drops, one for every promise made at the mandap.|Worn by a bride today, kept by her daughter tomorrow."><svg><use href="#i-play"/></svg>Watch the film</button>
+    </div>
+   </div>
+  </div>
+ </section>
+
  <section id="collection">
   <div class="wrap">
    <div class="section-head reveal">
@@ -533,6 +609,30 @@ body.menu-open header{background:transparent;border-color:transparent;backdrop-f
      </div>
     </article>
    </div>
+  </div>
+ </section>
+
+ <section class="lens" id="gallery" aria-label="Turn the collection">
+  <div class="wrap">
+   <div class="section-head reveal">
+    <div class="eyebrow">Turn the collection</div>
+    <h2>Every angle, <em>in your hands.</em></h2>
+    <p>Drag, swipe or use the arrows to turn the collection. Tap the centre piece to ask about it on WhatsApp.</p>
+   </div>
+  </div>
+  <div class="lens-stage" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Collection gallery, use left and right arrow keys">
+   <div class="lens-track">
+     <a class="lens-card" href="https://wa.me/919818116918?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Rani%20Haar%20Heirloom." target="_blank" rel="noopener" data-kicker="Bridal" data-title="Rani Haar Heirloom" data-caption="Floral medallions, filigree pendant, seven ruby drops."><img src="assets/img/necklace-spotlight.jpg" alt="Gold necklace with floral medallions and ruby drops under a spotlight" loading="lazy" draggable="false"></a>
+     <a class="lens-card" href="https://wa.me/919818116918?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Padma%20Ruby%20Filigree." target="_blank" rel="noopener" data-kicker="Detail" data-title="Padma Ruby Filigree" data-caption="An oval ruby held in a beaded bezel and gold petals."><img src="assets/img/ruby-detail.jpg" alt="Macro close-up of a ruby set in a gold flower" loading="lazy" draggable="false"></a>
+     <a class="lens-card" href="https://wa.me/919818116918?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Maharani%20Collar%20Set." target="_blank" rel="noopener" data-kicker="Styled" data-title="Maharani Collar Set" data-caption="Sits high and wide to frame the face."><img src="assets/img/bride-portrait.jpg" alt="Woman in a maroon silk saree wearing a gold collar necklace" loading="lazy" draggable="false"></a>
+     <a class="lens-card" href="https://wa.me/919818116918?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Rani%20Haar." target="_blank" rel="noopener" data-kicker="Heirloom" data-title="Rani Haar, studio view" data-caption="The full crescent, laid out on velvet."><img src="assets/img/heirloom-necklace.jpg" alt="Ornate gold necklace on dark velvet" loading="lazy" draggable="false"></a>
+     <a class="lens-card" href="https://wa.me/919818116918?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Maharani." target="_blank" rel="noopener" data-kicker="Fit & drape" data-title="Maharani, profile view" data-caption="How the collar rests at the neckline."><img src="assets/img/bride-profile.jpg" alt="Profile of a woman wearing a gold collar necklace" loading="lazy" draggable="false"></a>
+     <a class="lens-card" href="https://wa.me/919818116918?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20In%20the%20light." target="_blank" rel="noopener" data-kicker="Atmosphere" data-title="In the light" data-caption="Gold under a single beam on midnight velvet."><img src="assets/img/necklace-glow.jpg" alt="Gold necklace glowing under a beam of light" loading="lazy" draggable="false"></a>
+   </div>
+  </div>
+  <div class="wrap lens-bar">
+   <div class="lens-info" aria-live="polite"><span class="lens-kicker"></span><strong class="lens-title"></strong><span class="lens-cap"></span></div>
+   <div class="lens-nav"><span class="lens-count">01 / 06</span><button class="lens-prev" type="button" aria-label="Previous piece">&larr;</button><button class="lens-next" type="button" aria-label="Next piece">&rarr;</button></div>
   </div>
  </section>
 
@@ -704,5 +804,6 @@ document.getElementById('send-email').addEventListener('click',()=>{if(!check())
 </script>
 <script src="assets/js/hero-fx.js" defer></script>
 <script src="assets/js/dual-stage.js" defer></script>
+<script src="assets/js/three-d.js" defer></script>
 </body>
 </html>
